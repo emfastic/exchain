@@ -1,6 +1,7 @@
 import React, { useEffect, useContext, useCallback } from "react";
 import Header from "./components/Header";
 import Context from "./context/index";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   const { linkSuccess, dispatch } = useContext(Context);
@@ -75,11 +76,7 @@ const App = () => {
     <div>
       <div>
         <Header />
-        {linkSuccess && (
-          <>
-            <div>worked</div>
-          </>
-        )}
+        {linkSuccess && <Dashboard />}
       </div>
     </div>
   );

@@ -140,10 +140,23 @@ const Header = () => {
                 </p>
               </div>
               {isItemAccess && (
-                <p>
-                  Now that you have an access_token, you can make all of the
-                  following requests:
-                </p>
+                <>
+                  <p>
+                    Now that you have an access_token, you can make all of the
+                    following requests:
+                  </p>
+                  <button
+                    onClick={async () => {
+                      const response = await fetch(`/api/transactions`, {
+                        method: "GET",
+                      });
+                      const data = await response.json();
+                      console.log(data);
+                    }}
+                  >
+                    test
+                  </button>
+                </>
               )}
             </>
           )}
